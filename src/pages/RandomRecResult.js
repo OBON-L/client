@@ -83,16 +83,16 @@ const RandomRecResult = () => {
         <div id='statement'>오늘 {userState[0].name}님에게 추천하는 조합은?</div>
       </div>
       {/* SY: 상의, 하의 추천 결과 보여주는 두 개의 박스 */}
+    {/* SY: 상의정보를 넘겨주는데, 이름-카테고리-계절-색-src-파일명-웹크롤링 여부-웹크롤링 주소 순으로 전달해야 함, 이때 파일명을 같이 전달하지 않으면 이미지 에러 발생 */}
+  {/* SY: 하의정보를 넘겨주는데, 이름-카테고리-계절-색-src-파일명-웹크롤링 여부-웹크롤링 주소 순으로 전달해야 함, 이때 파일명을 같이 전달하지 않으면 이미지 에러 발생 */}
       <div id='boxContainer'>
         {/* SY: ClothBox에서 id를 넘겨줌으로써 어떤 박스의 하트가 클릭됐는지, 어떤 박스가 WebCrawling한 결과인지 판단할 수 있게 함 */}
-        {/* SY: 상의정보를 넘겨주는데, 이름-카테고리-계절-색-src-파일명-웹크롤링 여부-웹크롤링 주소 순으로 전달해야 함, 이때 파일명을 같이 전달하지 않으면 이미지 에러 발생 */}
         <ClothBox id='leftBox'
           name={upperState[0].name} category={upperState[1].category} season={upperState[2].season} 
           color={upperState[3].color} src={upperState[4].src} fileName={upperState[5].fileName} 
           isWebCrawl={upperState[6].isWebCrawl} href={upperState[7].href}>
         </ClothBox>
         <img id='blackFilledHeart' src={blackFilledHeart} alt='blackFilledHeart' />
-        {/* SY: 하의정보를 넘겨주는데, 이름-카테고리-계절-색-src-파일명-웹크롤링 여부-웹크롤링 주소 순으로 전달해야 함, 이때 파일명을 같이 전달하지 않으면 이미지 에러 발생 */}
         <ClothBox id='righttBox' 
           name={lowerState[0].name} category={lowerState[1].category} season={lowerState[2].season} 
           color={lowerState[3].color} src={lowerState[4].src} fileName={lowerState[5].fileName}
