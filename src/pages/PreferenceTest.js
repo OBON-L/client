@@ -265,8 +265,8 @@ const PreferenceTest = props => {
         <div id='ratingBar'>
           <div className='ratingBar'>
             <span className='score' id='leftScore'>1점</span>
+// SY: 왜인지 모르겠으나 changeValue 함수를 추가함으로써 ratingBar 에러 해결 (이 함수 없으면 이미지 넘어갈 때마다 3점으로 초기화 + 전 이미지들로 돌아갔을 때 ratingBar 제대로 안 움직이는 문제 발생)
             <input type="range" min="1" max="5" value={_value[selectedCloth]} id="range" onChange={e => {
-              // SY: 왜인지 모르겠으나 changeValue 함수를 추가함으로써 ratingBar 에러 해결 (이 함수 없으면 이미지 넘어갈 때마다 3점으로 초기화 + 전 이미지들로 돌아갔을 때 ratingBar 제대로 안 움직이는 문제 발생)
               changeValue(e.target.value);
               setTemp(e.target.value);
               }}></input>
